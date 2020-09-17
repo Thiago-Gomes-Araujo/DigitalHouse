@@ -6,8 +6,9 @@ let dados = fs.readFileSync(__dirname + '/dados.txt', 'utf8');
 
 // importando Modulo Instalado
 const moment = require('moment');
-let data = moment().format('MMM do YY')
-//console.log(data);
+let data = moment().locale('pt-br').format("L");
+console.log(data);
+
 
 // importando Modulo Criado
 const series = require('./series');
@@ -15,4 +16,4 @@ const series = require('./series');
 
 const cachorro = require('./cachorro');
 
-console.log("O cachorro se chama "+cachorro.nome+" e tem "+cachorro.idade+" anos");
+//console.log("O cachorro se chama "+cachorro.nome+" e tem "+cachorro.idade+" anos");

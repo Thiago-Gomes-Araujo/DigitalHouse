@@ -1,0 +1,14 @@
+/* CLASSE */
+.destacado {
+    color: gold;
+}
+/* CLASSE */
+.em-maiuscula {
+    text-transform: uppercase;
+}
+
+/* ID */
+#whatsapp {
+    background-color: green;
+    color:white;
+}

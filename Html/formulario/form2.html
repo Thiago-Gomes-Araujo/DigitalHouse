@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Formulario</title>
+    </head>
+    <body>
+        <h1>Fomulários</h1>
+        <!-- Formulario Usando RADIO -->
+        <form action="resultado.html" method="POST">
+            <!-- escreva seu código aqui -->
+            <label>Você tem um pet?</label><br>
+            <input type="radio"id="Sim" value ="s" name="pet"><label for="sim">Sim</label>
+            <input type="radio"id="Não" value ="n"  name="pet"><label for="nao">Não</label>
+            <input type="submit" value="Enviar">
+        </form><br>
+        <!-- Formulario Usando CHEKBOX-->
+        <form action="resultado.html" method="POST">
+        <label>Quais são seus hobbies?</label><br>
+        <input type="checkbox" value ="Pescar" name="hobby"><label for="pescar">Pescar</label>
+        <input type="checkbox" value ="Correr"  name="hobby"><label for="correr">Correr</label>
+        <input type="checkbox" value ="Yoga"  name="hobby"><label for="yoga">Yoga</label>
+        </form><br>
+
+        <!-- Usando Select -->
+        <form action="index.html" method="POST">
+        <label>Selecione o mês do seu aniversário</label>
+        <!-- escreva seu código aqui -->
+        <select name="mes" id="mes">
+            <option selected disabled>Selecione</option>
+            <option value="1">Janeiro</option>
+            <option value="2">Fevereiro</option>
+            <option value="3">Março</option>
+            <option value="4">Abril</option>
+            <option value="10">Maio</option>
+            <option value="5">Junho</option>
+            <option value="6">Julho</option>
+            <option value="7">Agosto</option>
+            <option value="8">Setembro</option>
+            <option value="9">Outubro</option>
+            <option value="11">Novembro</option>
+            <option value="12">Dezembro</option>
+        </select>
+        <input type="submit" value="Enviar">
+        </form><br>
+
+        <!-- Usando Campo de Texto -->
+        <form>
+            <label>Deixe seu comentário</label><br>
+            <!-- escreva seu código aqui -->
+            <textarea name="texto" id="texto" cols="30" rows="10"></textarea>
+            <button type="submit">Enviar</button>
+            <button type="reset">Apagar</button>
+        </form>
+    </body>
+</html>

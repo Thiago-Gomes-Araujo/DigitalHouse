@@ -1,0 +1,12 @@
+h3{
+    color:blue;
+}
+
+/* CLASSE */
+.negrito{
+    font-weight: bold;
+}
+/* ID */
+#gigante{
+    font-size:40px;
+}

@@ -1,0 +1,40 @@
+h1{
+    font-size: 30px;
+    text-align: center;
+    color: black;
+}
+p{
+    font-size: 22px;
+    text-align: justify;
+    color: black;
+}
+label{
+    display: block;
+    font-size: 22px;
+    margin-bottom: 5px;
+    
+}
+.form-inline div{
+    display: inline-block;
+    margin: 10px;
+}
+form div.form-inline input.input-contato{
+    width: 300px;
+    height: 20px;
+}
+.textarea-contato{
+    resize: none;
+    width: 630px;
+
+}
+.botao-contato{
+    border-radius: 5px;
+    border: none;
+    width: 100px;
+    height: 30px;
+    font-size: 20px;
+    background-color: #ffb90f;
+
+
+}
+

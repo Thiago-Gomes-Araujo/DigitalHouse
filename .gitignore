@@ -351,3 +351,5 @@ Express-2/MeuProjeto/node_modules/vary/LICENSE
 Express-2/MeuProjeto/node_modules/vary/package.json
 Express-2/MeuProjeto/node_modules/vary/README.md
 Express-2/MeuProjeto/package-lock.json
+.vscode/launch.json
+Express-2/MeuProjeto/npm-debug.log

@@ -6,7 +6,20 @@
   </head>
   <body>
     <h1>Estudante</h1>
-    <p>Bem Vindo Caro Aluno</p>
+    <p>Bem Vindo caro Aluno</p>
+    <hr>
+    <%
+
+        const estudantes = [
+            {nome: 'thiago', curso:'Full Stack'},
+            {nome: 'Pedro', curso:'Full Stack'}
+        ];
+    %>
+    <ul>
+      <% for(const estudante of estudantes) { %>
+        <li> <%= estudante.nome %> </li>
+      <% } %>  
+    </ul>
     
   </body>
 </html>

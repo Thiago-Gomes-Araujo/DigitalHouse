@@ -1,4 +1,5 @@
-<%- include('../partials/heard') %> 
+<%- include('../partials/head') %> 
+<%- include('../partials/header') %> 
 
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
@@ -27,31 +28,14 @@
       <h1>Exemplares</h1>
       <p>Confira abaixo os exemplares do nosso catálogo de filmes exclusivos</p>
       <div class="card-deck">
-        <div class="card" style="width: 18rem;">
-          <img src="images/card-vingadores.jpg" class="card-img-top" alt="...">
+        <% cards.ForEach(card =>{ %>)
           <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
+            <h5 class="card-title">card-title</h5>
+            <p class="card-text"></p>
+            <a href="#" class="btn btn-primary"></a>
           </div>
+          <%}) %>
         </div>
-        <div class="card" style="width: 18rem;">
-          <img src="images/card-vingadores.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-        <div class="card" style="width: 18rem;">
-          <img src="images/card-vingadores.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section class="mt-3" id="form">
@@ -75,6 +59,7 @@
       </form>
     </section>
   </main>
+  <%- include('../partials/footer') %> 
   
 </body>
 

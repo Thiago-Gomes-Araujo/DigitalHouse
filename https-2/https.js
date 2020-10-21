@@ -6,5 +6,5 @@ app.listen(32,() => console.log("Levantando um servidor com Express"));
 
 // Rotas 
 app.get('/home',function(req,res){
-    res.send('Listar Filmes')
+    res.send('Listar Filmes Aqui')
 });

@@ -4,5 +4,6 @@ const produtoController = require('../controllers/protudoController')
 
 
 router.get('/criar',produtoController.viewForm);
+router.post('/criar',produtoController.saveForm)
 
 module.exports = router;

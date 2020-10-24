@@ -1,7 +1,3 @@
-let produto = {
-    nome: null,
-    preco: null,
-}
 
 const produtoContrller = {
 
@@ -15,17 +11,13 @@ const produtoContrller = {
         res.send(nomeproduto)
     } */
     saveForm: (req, res) =>{
-
-
-        /* console.log(req.body);*/
-        const {nomeproduto, precoproduto} = req.body; 
         let produto = {
-            nome: nomeproduto,
-            preco: precoproduto,
+            nome: null,
+            preco: null,
         }
+        produto.nome = req.body.nome
+        produto.preco = req.body.preco
         res.send(produto)
     }
-
-
 }
 module.exports = produtoContrller;

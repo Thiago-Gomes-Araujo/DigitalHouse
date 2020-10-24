@@ -8,6 +8,6 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 router.get('/contato',indexController.viewContato);
-router.get('/celular/',celularController.viewCelular);
+router.get('/celular/:id',celularController.viewCelular);
 
 module.exports = router;

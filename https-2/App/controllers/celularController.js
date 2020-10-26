@@ -20,9 +20,9 @@ const celulares = [
 const celularContrller = {
     
     viewCelular: (req, res) =>{
-        /* res.send(celulares); */
-        /* res.send(req.query); */
-        const {max} = req.query;
+       res.send(celulares);
+        res.send(req.query);
+        /* const {max} = req.query; */
 
         for (i = 0; i < celulares.length; i++){
             const a = celulares.filter((precos) =>{

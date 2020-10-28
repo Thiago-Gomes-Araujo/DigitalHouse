@@ -20,7 +20,6 @@ module.exports = {
     fs.writeFileSync(filePath, 'module.exports = ');
     fs.appendFileSync(filePath, contactsJson);
   
-    return;
     /* console.log(contactsJson) */
    /*  console.log(filePath) */
 

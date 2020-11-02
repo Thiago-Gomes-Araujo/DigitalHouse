@@ -1,7 +1,7 @@
+const  {cards}  = require("../data/cards");
+const contacts  = require("../data/contacts")
 const fs = require('fs');
 const path = require('path');
-const { cards } = require("../data/cards")
-const {contacts} = require("../data/contact")
 
 
 module.exports = {
@@ -12,17 +12,14 @@ module.exports = {
   create(req, res, next) {
     let id = contacts.length + 1
     let contact = { id, ...req.body }
-    contacts.push(contact)
-    /* console.log(contact) */
-    let contactsJson = JSON.stringify(contacts)
-    let filePath = path.join('data','contacts.js')
+    contacts.push(contact);
 
-    fs.writeFileSync(filePath, 'module.exports = ');
+
+    const contactsJson = JSON.stringify(contacts);
+    const filePath = path.join("data", "contacts.js");
+
+    fs.writeFileSync(filePath, "module.exports = ");
     fs.appendFileSync(filePath, contactsJson);
-  
-    /* console.log(contactsJson) */
-   /*  console.log(filePath) */
-
     res.render('index', { cards, added: true });
   }, 
 
@@ -41,12 +38,6 @@ module.exports = {
     contact.name = nome
     contact.email = email
     contact.message = mensagem
-
-    let contactsJson = JSON.stringify(contacts)
-    let filePath = path.join('data','contacts.js')
-
-    fs.writeFileSync(filePath, 'module.exports = ');
-    fs.appendFileSync(filePath, contactsJson);
 
     res.render('edit-contact', { contact, updated: true })
   },

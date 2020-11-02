@@ -16,7 +16,7 @@ let cards = [
       'title': 'Terceiro Título',
       'text': 'Terceiro texto do card que temos para exibir',
       'button': 'Ver mais'
-    },
+    }
   ];
   
   module.exports = {

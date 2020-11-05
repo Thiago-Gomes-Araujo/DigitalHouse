@@ -19,5 +19,14 @@ module.exports = {
 
     res.render('create-user', {added: true});
   },
+  autheticate(req,res, next) {
+    const {email, password} = req.body;
+    let user = users.find(user => email == user.email)
+    if(!user){
+      return console.log("usuario não existe")
+    }
+    console.log(user)
+
+  }
 
 }

@@ -4,7 +4,8 @@ const saveData = require("../utils/saveData");
 
 module.exports = {
   list(req, res, next) {
-    res.render('contacts', { contacts });
+    console.log(req.session.user);
+    res.render('contacts', { contacts, user:req.session.user});
   },
 
   create(req, res, next) {

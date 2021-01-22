@@ -16,6 +16,10 @@ form textarea {
   resize: none;
 }
 
+.container { 
+  margin-top: 100px;
+}
+
 .page-min-height {
   height: calc(100vh - 100px);
 }
@@ -31,36 +35,25 @@ form textarea {
   transition: transform 0.8s ease-in-out;
 }
 
-footer {
-  height: 100px;
-}
-
-.icons {
-  font-size: 20px;
-  color: #fff;
-}
-.sticky{
-  z-index: 2;
+.sticky {
   position: fixed;
+  z-index: 2;
   width: 100%;
   top: 0;
   opacity: 0.7;
-  transition: opacity 0.5s
-
+  transition: 0.5s;
 }
 
-a.nav-link{
-  color:#fff !important;
+.nav-link {
+  color: #fff !important;
 }
 
-.shrink{
-  /* animation: shrink 0.3s; */
+.shrink {
   transform: scale(1);
   transition: all 0.3s ease-in-out;
 }
 
-.grow{
-  /* animation: grow 0.3s; */
+.grow {
   transform: scale(1.1);
   transition: all 0.3s ease-in-out;
 }
@@ -71,4 +64,13 @@ a.nav-link{
 
 .card-deck img:hover {
   opacity: 1;
+}
+
+footer {
+  height: 100px;
+}
+
+.icons {
+  font-size: 20px;
+  color: #fff;
 }

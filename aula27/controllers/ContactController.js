@@ -32,12 +32,11 @@ module.exports = {
   },
 
   async create(req, res, next) {
-    let cards = await Card.findAll();
+    let contact = { ...req.body };
 
-  let contact = { ...req.body };
     await Contact.create(contact);
 
-    res.render('index', { cards, added: true });
+    return res.status(200).json({ message: 'Mensagem de contato enviada com sucesso' });
   }, 
 
   async edit(req, res, next) {
@@ -69,14 +68,8 @@ module.exports = {
     contact.deleted = true;
 
     await contact.save();
-
-    let contacts = await Contact.findAll({
-      where: {
-        deleted: 0
-      }
-    });
     
-    res.render('contacts', { contacts, deleted: true });
+    res.redirect('/contato/listar');
   },
 }
 

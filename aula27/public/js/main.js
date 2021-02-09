@@ -48,19 +48,19 @@
 // rotacionando logo ao passar / retirar mouse
 let logo = document.querySelector('.logo');
 
-logo.addEventListener('mouseover', function() {
+logo.addEventListener('mouseover', function () {
   logo.style.transform = 'rotate(180deg)';
 });
 
-logo.addEventListener('mouseout', function() {
+logo.addEventListener('mouseout', function () {
   logo.style.transform = 'rotate(0deg)';
 });
 
 // menu fixo ao scrollar a pagina para baixo
 let header = document.querySelector('.navbar');
 
-window.onscroll = function fixandoHeader(){
-  if(window.pageYOffset > 0){
+window.onscroll = function fixandoHeader() {
+  if (window.pageYOffset > 0) {
     header.style.opacity = '1';
   } else {
     header.style.opacity = '0.7';
@@ -71,12 +71,12 @@ window.onscroll = function fixandoHeader(){
 let cards = document.querySelectorAll('.card-deck img');
 
 for (let i = 0; i < cards.length; i++) {
-  cards[i].addEventListener('mouseover', function(){
+  cards[i].addEventListener('mouseover', function () {
     this.classList.add('grow');
     this.classList.remove('shrink');
   });
 
-  cards[i].addEventListener('mouseout', function(){
+  cards[i].addEventListener('mouseout', function () {
     this.classList.add('shrink');
     this.classList.remove('grow');
   });
@@ -87,17 +87,32 @@ let camposFormulario = document.querySelector('form').elements;
 let form = document.querySelector('#form-contato');
 
 for (let i = 0; i < camposFormulario[2]; i++) {
-  camposFormulario[i].addEventListener('focus', function(){
+  camposFormulario[i].addEventListener('focus', function () {
     this.style.backgroundColor = '#eee';
   });
 
-  camposFormulario[i].addEventListener('blur', function(){
+  camposFormulario[i].addEventListener('blur', function () {
     this.style.backgroundColor = '#fff';
   });
 }
 
 // Aula 4 - PARTE 2 VALIDACAO E AJAX
-form.addEventListener('submit', function(event){
+form.addEventListener('submit', function (event) {
+  // removendo bordas vermelhas quando o formulario estiver ok
+  event.preventDefault();
+
+  let nome = document.querySelector('#input-nome');
+  let email = document.querySelector('#input-email');
+  let mensagem = document.querySelector('#textarea-mensagem');
+
+  email.classList.remove('is-invalid');
+  nome.classList.remove('is-invalid');
+  mensagem.classList.remove('is-invalid');
+
+});
+
+
+form.addEventListener('submit', function (event) {
   // previnindo comportamento default - atualizacao da pagina
   event.preventDefault();
 
@@ -105,38 +120,38 @@ form.addEventListener('submit', function(event){
   let email = document.querySelector('#input-email');
   let mensagem = document.querySelector('#textarea-mensagem');
 
-  if(validaFormContato(nome, email, mensagem)){
+  if (validaFormContato(nome, email, mensagem)) {
     enviaFormContato(nome, email, mensagem);
     limpaFormContato();
   }
 });
 
-function validaFormContato(nomeParam, emailParam, mensagemParam){
+function validaFormContato(nomeParam, emailParam, mensagemParam) {
   let invalidFeedbacks = document.querySelectorAll('.invalid-feedback');
-  
-  if(nomeParam.value === '' || emailParam.value === '' || mensagemParam.value === ''){
-    if(nomeParam.value === ''){
+
+  if (nomeParam.value === '' || emailParam.value === '' || mensagemParam.value === '') {
+    if (nomeParam.value === '') {
       nomeParam.classList.add('is-invalid');
       invalidFeedbacks[0].innerHTML = 'Nome obrigatório';
     }
-  
-    if(emailParam.value === ''){
+
+    if (emailParam.value === '') {
       emailParam.classList.add('is-invalid');
       invalidFeedbacks[1].innerHTML = 'E-mail obrigatório';
     }
-  
-    if(mensagemParam.value === ''){
+
+    if (mensagemParam.value === '') {
       mensagemParam.classList.add('is-invalid');
       invalidFeedbacks[2].innerHTML = 'Mensagem obrigatória';
     }
 
     return false
-  } else { 
+  } else {
     return true;
   }
 }
 
-function enviaFormContato(nomeParam, emailParam, mensagemParam){
+function enviaFormContato(nomeParam, emailParam, mensagemParam) {
   let data = {
     "name": nomeParam.value,
     "email": emailParam.value,
@@ -153,15 +168,15 @@ function enviaFormContato(nomeParam, emailParam, mensagemParam){
     headers: headers,
     body: JSON.stringify(data)
   })
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
-    exibeOcultaMensagemDeSucesso(data.message);
-  });
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      exibeOcultaMensagemDeSucesso(data.message);
+    });
 }
 
-function exibeOcultaMensagemDeSucesso(mensagem){
+function exibeOcultaMensagemDeSucesso(mensagem) {
   let mensagemDeSucesso = document.querySelector('.message-success');
   mensagemDeSucesso.innerHTML = mensagem;
   mensagemDeSucesso.classList.remove('d-none');
@@ -171,6 +186,6 @@ function exibeOcultaMensagemDeSucesso(mensagem){
   }, 1500);
 }
 
-function limpaFormContato(){
+function limpaFormContato() {
   document.querySelector('form').reset();
 }

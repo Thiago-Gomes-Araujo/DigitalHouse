@@ -99,6 +99,23 @@ for (let i = 0; i < camposFormulario[2]; i++) {
 // Aula 4 - PARTE 2 VALIDACAO E AJAX
 
 
+
+form.addEventListener('submit', function (event) {
+  // removendo bordas vermelhas quando o formulario estiver ok
+  event.preventDefault();
+
+  let nome = document.querySelector('#input-nome');
+  let email = document.querySelector('#input-email');
+  let mensagem = document.querySelector('#textarea-mensagem');
+
+  email.classList.remove('is-invalid');
+  nome.classList.remove('is-invalid');
+  mensagem.classList.remove('is-invalid');
+
+});
+
+
+
 form.addEventListener('submit', function (event) {
   // previnindo comportamento default - atualizacao da pagina
   event.preventDefault();
